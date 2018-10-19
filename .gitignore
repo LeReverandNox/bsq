@@ -1,0 +1,8 @@
+bsq
+compile_commands.json
+Makefile
+*.o
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+assets/
