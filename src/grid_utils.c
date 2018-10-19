@@ -6,14 +6,14 @@
 /*   By: laidet_r <laidet_r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 14:03:52 by laidet_r          #+#    #+#             */
-/*   Updated: 2018/10/20 00:45:42 by laidet_r         ###   ########.fr       */
+/*   Updated: 2018/10/20 00:51:25 by laidet_r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 #include "bsq.h"
 #include "grid_utils.h"
-#include "libft.h"
 
 int get_max_grid_width(t_ctx *context)
 {

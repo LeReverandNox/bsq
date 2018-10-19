@@ -6,13 +6,13 @@
 /*   By: laidet_r <laidet_r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 13:49:51 by laidet_r          #+#    #+#             */
-/*   Updated: 2018/10/20 00:45:28 by laidet_r         ###   ########.fr       */
+/*   Updated: 2018/10/20 00:51:05 by laidet_r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "bsq.h"
 #include "grid_utils.h"
-#include "libft.h"
 
 void init_context_data(t_ctx *context)
 {
