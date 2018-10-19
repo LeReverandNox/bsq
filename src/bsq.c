@@ -6,14 +6,13 @@
 /*   By: laidet_r <laidet_r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 13:49:51 by laidet_r          #+#    #+#             */
-/*   Updated: 2018/10/20 00:30:48 by laidet_r         ###   ########.fr       */
+/*   Updated: 2018/10/20 00:45:28 by laidet_r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 #include "grid_utils.h"
 #include "libft.h"
-#include <stdio.h>
 
 void init_context_data(t_ctx *context)
 {
@@ -36,11 +35,6 @@ int validate_context_data(t_ctx *context)
 
 int solve_bsq(t_ctx *context)
 {
-	/* printf("context->width: %d\n", context->width); */
-	/* printf("context->height: %d\n", context->height); */
-	/* printf("context->empty_c: %c\n", context->empty_c); */
-	/* printf("context->blocked_c: %c\n", context->blocked_c); */
-	/* printf("context->full_c: %c\n", context->full_c); */
 	int max_index;
 	int max_i;
 	int max_j;

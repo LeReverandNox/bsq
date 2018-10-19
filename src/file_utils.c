@@ -6,11 +6,10 @@
 /*   By: laidet_r <laidet_r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 14:09:35 by laidet_r          #+#    #+#             */
-/*   Updated: 2018/10/19 21:57:28 by laidet_r         ###   ########.fr       */
+/*   Updated: 2018/10/20 00:45:34 by laidet_r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 

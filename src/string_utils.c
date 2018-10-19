@@ -6,13 +6,12 @@
 /*   By: laidet_r <laidet_r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 17:25:13 by laidet_r          #+#    #+#             */
-/*   Updated: 2018/10/19 23:19:58 by laidet_r         ###   ########.fr       */
+/*   Updated: 2018/10/20 00:45:49 by laidet_r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "string_utils.h"
 #include "libft.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 char get_n_last_char(char *str, int len, int n)

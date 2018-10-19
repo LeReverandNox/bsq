@@ -6,12 +6,11 @@
 /*   By: laidet_r <laidet_r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 14:03:52 by laidet_r          #+#    #+#             */
-/*   Updated: 2018/10/20 00:14:57 by laidet_r         ###   ########.fr       */
+/*   Updated: 2018/10/20 00:45:42 by laidet_r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 #include "bsq.h"
 #include "grid_utils.h"
 #include "libft.h"
