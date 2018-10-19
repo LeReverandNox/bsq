@@ -6,7 +6,7 @@
 /*   By: laidet_r <laidet_r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 13:50:46 by laidet_r          #+#    #+#             */
-/*   Updated: 2018/10/19 23:14:35 by laidet_r         ###   ########.fr       */
+/*   Updated: 2018/10/20 00:30:29 by laidet_r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,12 +99,10 @@ int process_args(int argc, char **argv)
 		context = process_file(fd);
 		if (!context)
 			return 0;
-		printf("OK on va passer à l'algo !\n");
-		printf("context->width: %d\n", context->width);
-		printf("context->height: %d\n", context->height);
-		printf("context->empty_c: %c\n", context->empty_c);
-		printf("context->blocked_c: %c\n", context->blocked_c);
-		printf("context->full_c: %c\n", context->full_c);
+		if (!solve_bsq(context))
+			return 0;
+		else
+			print_grid(context);
 	}
 	return 1;
 }

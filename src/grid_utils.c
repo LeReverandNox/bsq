@@ -6,11 +6,12 @@
 /*   By: laidet_r <laidet_r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 14:03:52 by laidet_r          #+#    #+#             */
-/*   Updated: 2018/10/19 22:27:15 by laidet_r         ###   ########.fr       */
+/*   Updated: 2018/10/20 00:14:57 by laidet_r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 #include "bsq.h"
 #include "grid_utils.h"
 #include "libft.h"
@@ -76,4 +77,76 @@ int validate_context_grid(t_ctx *context)
 	return (validate_grid_width(context) &&\
 			validate_grid_content(context)
 		);
+}
+
+int init_aux_grid(t_ctx *context)
+{
+	int **aux_grid;
+	int *line;
+	int i;
+	int j;
+
+
+	aux_grid = NULL;
+	aux_grid = malloc(sizeof(int *) * context->height);
+	if (!aux_grid)
+		return 0;
+	i = 0;
+	while (i < context->height)
+	{
+		line = NULL;
+		line = malloc(sizeof(int) * context->width);
+		if (!line)
+			return 0;
+		j = 0;
+		while (j < context->width)
+			line[j++] = 0;
+		aux_grid[i++] = line;
+	}
+	context->aux_grid = aux_grid;
+	return 1;
+}
+
+void print_aux_grid(t_ctx *context)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (i < context->height)
+	{
+		j = 0;
+		while (j < context->width)
+			ft_putnbr(context->aux_grid[i][j++]);
+		i += 1;
+		ft_putchar('\n');
+	}
+}
+
+void print_grid(t_ctx *context)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (i < context->height)
+	{
+		j = 0;
+		while (j < context->width)
+			ft_putchar(context->grid[i][j++]);
+		i += 1;
+		ft_putchar('\n');
+	}
+}
+
+int min(int a, int b, int c)
+{
+	int m;
+
+	m = a;
+	if (m > b)
+		m = b;
+	if (m > c)
+		m = c;
+	return m;
 }
