@@ -6,7 +6,7 @@
 /*   By: laidet_r <laidet_r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 13:50:46 by laidet_r          #+#    #+#             */
-/*   Updated: 2018/10/20 00:30:29 by laidet_r         ###   ########.fr       */
+/*   Updated: 2018/10/20 00:40:04 by laidet_r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,18 @@ int process_grid(int fd, t_ctx *context)
 	if (!grid)
 		return 0;
 	i = 0;
-	while (i < context->height)
+	line = read_line(fd);
+	if (!line)
+		return 0;
+	while (line)
 	{
-		line = read_line(fd);
-		if (!line)
+		if (i >= context->height)
 			return 0;
 		grid[i++] = line;
+		line = read_line(fd);
 	}
+	if (i < context->height)
+		return 0;
 	context->grid = grid;
 	return validate_context_grid(context);
 }
