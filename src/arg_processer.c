@@ -6,7 +6,7 @@
 /*   By: laidet_r <laidet_r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 13:50:46 by laidet_r          #+#    #+#             */
-/*   Updated: 2018/10/19 22:26:03 by laidet_r         ###   ########.fr       */
+/*   Updated: 2018/10/19 23:14:35 by laidet_r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ int process_header(int fd, t_ctx *context)
 		return 0;
 	len = ft_strlen(line);
 	context->height = ft_atoi(line);
-	line = remove_line_digits(line, len);
+	line = remove_firsts_digits(line, len);
 	len = ft_strlen(line);
+	if (len != 3)
+		return 0;
 	context->empty_c = get_n_last_char(line, len, 2);
 	context->blocked_c = get_n_last_char(line, len, 1);
 	context->full_c = get_n_last_char(line, len, 0);
