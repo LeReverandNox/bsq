@@ -6,7 +6,7 @@
 /*   By: laidet_r <laidet_r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 14:09:35 by laidet_r          #+#    #+#             */
-/*   Updated: 2018/10/20 03:28:21 by laidet_r         ###   ########.fr       */
+/*   Updated: 2018/10/20 04:05:41 by laidet_r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char *read_line(int fd)
 		i += 1;
 		ret = read(fd, (line + i), 1);
 	}
+	if (line[i] != '\n')
+		return "";
 	line[i] = '\0';
 	return line;
 }
