@@ -6,32 +6,14 @@
 /*   By: laidet_r <laidet_r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 13:49:51 by laidet_r          #+#    #+#             */
-/*   Updated: 2018/10/20 00:51:05 by laidet_r         ###   ########.fr       */
+/*   Updated: 2018/10/20 03:13:56 by laidet_r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "bsq.h"
 #include "grid_utils.h"
-
-void init_context_data(t_ctx *context)
-{
-	context->width = 0;
-	context->height = 0;
-	context->full_c = 0;
-	context->empty_c = 0;
-	context->blocked_c = 0;
-}
-
-int validate_context_data(t_ctx *context)
-{
-	return (
-		context->height != 0 &&\
-		context->full_c != 0 &&\
-		context->empty_c != 0 &&\
-		context->blocked_c != 0
-		);
-}
+#include "int_utils.h"
 
 int solve_bsq(t_ctx *context)
 {
@@ -48,7 +30,7 @@ int solve_bsq(t_ctx *context)
 }
 
 
-int build_aux_grid(t_ctx *context)
+void build_aux_grid(t_ctx *context)
 {
 	int i;
 	int j;
@@ -61,6 +43,13 @@ int build_aux_grid(t_ctx *context)
 	while(++j < context->width)
 		context->aux_grid[0][j] = \
 			(context->grid[0][j] == context->empty_c) ? 1 : 0;
+	fill_aux_grid(context);
+}
+
+void fill_aux_grid(t_ctx *context)
+{
+	int i;
+	int j;
 
 	i = 0;
 	while (++i < context->height)
@@ -78,7 +67,6 @@ int build_aux_grid(t_ctx *context)
 				context->aux_grid[i][j] = 0;
 		}
 	}
-	return 1;
 }
 
 void compute_solution(t_ctx *context, int *max_index, int *max_i, int *max_j)

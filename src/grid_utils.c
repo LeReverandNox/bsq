@@ -6,77 +6,13 @@
 /*   By: laidet_r <laidet_r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 14:03:52 by laidet_r          #+#    #+#             */
-/*   Updated: 2018/10/20 00:51:25 by laidet_r         ###   ########.fr       */
+/*   Updated: 2018/10/20 03:24:24 by laidet_r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-#include "bsq.h"
 #include "grid_utils.h"
-
-int get_max_grid_width(t_ctx *context)
-{
-	int i;
-	int max_len;
-	int len;
-
-	max_len = 0;
-	i = 0;
-	while (i < context->height)
-	{
-		len = ft_strlen(context->grid[i++]);
-		if (len > max_len)
-			max_len = len;
-	}
-	return max_len;
-}
-
-int validate_grid_width(t_ctx *context)
-{
-	int i;
-	int max_len;
-	int len;
-
-	max_len = get_max_grid_width(context);
-	context->width = max_len;
-	i = 0;
-	while (i < context->height)
-	{
-		len = ft_strlen(context->grid[i++]);
-		if (len != max_len)
-			return 0;
-	}
-	return 1;
-}
-
-int validate_grid_content(t_ctx *context)
-{
-	int i;
-	int j;
-
-	i = 0;
-	while (i < context->height)
-	{
-		j = 0;
-		while (context->grid[i][j] != '\0')
-		{
-			if (context->grid[i][j] != context->empty_c &&\
-				context->grid[i][j] != context->blocked_c)
-				return 0;
-			j += 1;
-		}
-		i += 1;
-	}
-	return 1;
-}
-
-int validate_context_grid(t_ctx *context)
-{
-	return (validate_grid_width(context) &&\
-			validate_grid_content(context)
-		);
-}
 
 int init_aux_grid(t_ctx *context)
 {
@@ -106,22 +42,6 @@ int init_aux_grid(t_ctx *context)
 	return 1;
 }
 
-void print_aux_grid(t_ctx *context)
-{
-	int i;
-	int j;
-
-	i = 0;
-	while (i < context->height)
-	{
-		j = 0;
-		while (j < context->width)
-			ft_putnbr(context->aux_grid[i][j++]);
-		i += 1;
-		ft_putchar('\n');
-	}
-}
-
 void print_grid(t_ctx *context)
 {
 	int i;
@@ -136,16 +56,4 @@ void print_grid(t_ctx *context)
 		i += 1;
 		ft_putchar('\n');
 	}
-}
-
-int min(int a, int b, int c)
-{
-	int m;
-
-	m = a;
-	if (m > b)
-		m = b;
-	if (m > c)
-		m = c;
-	return m;
 }

@@ -1,38 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file_utils.c                                       :+:      :+:    :+:   */
+/*   grid_validation_utils.h                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laidet_r <laidet_r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/19 14:09:35 by laidet_r          #+#    #+#             */
-/*   Updated: 2018/10/20 03:28:21 by laidet_r         ###   ########.fr       */
+/*   Created: 2018/10/20 03:16:06 by laidet_r          #+#    #+#             */
+/*   Updated: 2018/10/20 03:18:04 by laidet_r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include "file_utils.h"
-
-char *read_line(int fd)
-{
-	char *line;
-	int i;
-	int ret;
-
-	line = NULL;
-	line = malloc(sizeof(char) * 200);
-	if (!line)
-		return NULL;
-	i = 0;
-	ret = read(fd, line + i, 1);
-	if (!ret)
-		return NULL;
-	while (ret > 0 && *(line + i) != '\n')
-	{
-		i += 1;
-		ret = read(fd, (line + i), 1);
-	}
-	line[i] = '\0';
-	return line;
-}
+#ifndef GRID_VALIDATION_UTILS_H
+#define GRID_VALIDATION_UTILS_H
+#include "bsq.h"
+int validate_context_grid(t_ctx *context);
+int validate_grid_width(t_ctx *context);
+int validate_grid_content(t_ctx *context);
+int get_max_grid_width(t_ctx *context);
+#endif

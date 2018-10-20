@@ -6,7 +6,7 @@
 /*   By: laidet_r <laidet_r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 13:50:46 by laidet_r          #+#    #+#             */
-/*   Updated: 2018/10/20 00:50:54 by laidet_r         ###   ########.fr       */
+/*   Updated: 2018/10/20 03:22:55 by laidet_r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@
 #include "bsq.h"
 #include "file_utils.h"
 #include "string_utils.h"
+#include "context_utils.h"
 #include "grid_utils.h"
+#include "grid_validation_utils.h"
 
 int process_header(int fd, t_ctx *context)
 {
@@ -92,7 +94,6 @@ int process_args(int argc, char **argv)
 
 	if (argc < 2)
 		return 0;
-
 	i = 1;
 	while (i < argc)
 	{
